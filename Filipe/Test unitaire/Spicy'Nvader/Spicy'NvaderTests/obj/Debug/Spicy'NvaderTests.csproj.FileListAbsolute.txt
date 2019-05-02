@@ -1,0 +1,24 @@
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\Bullet.wav
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\Darude - Sandstorm.wav
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\Hurt.wav
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\KeyTouchNoise.wav
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'NvaderTests.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'NvaderTests.pdb
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'Nvader.exe
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'Nvader.pdb
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'Nvader.exe.config
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.csprojAssemblyReference.cache
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.csproj.CoreCompileInputs.cache
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.csproj.CopyComplete
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.dll
+C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.pdb
