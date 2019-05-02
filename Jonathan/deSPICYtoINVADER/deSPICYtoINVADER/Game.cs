@@ -16,6 +16,7 @@ namespace deSPICYtoINVADER
         public const int WIDTH_OF_WIDOWS = 150;
         public const int HEIGHT_OF_WINDOWS = 80;
         public const int MARGIN = 4;//Marge de chaque de côté
+        private const string END_MESSAGE = "Suite à votre malencontreuse défaite contre ces aliens, ma foi plutôt nuls, ils ont envahi la terre et asservi les humains.\n Vous en êtes l'unique responsable. BRAVO !\n Votre score est de : ";
         private readonly string[] GAME_OVER= new string[] 
         {
             "  ______       ___       ___  ___   _______      ______   ____    ____  _______  ______  ",
@@ -92,13 +93,12 @@ namespace deSPICYtoINVADER
                 /* Fin de boucle */
             }
             GameOver();
-            Sound.BackMusic("Keyboard");
-            Thread.Sleep(3000);
             Console.Clear();
         }
 
         private void GameOver()
         {
+            Sound.StopMusic();
             Console.ForegroundColor = ConsoleColor.Red;
             for (int i = 0; i < GAME_OVER.Length; i++)
             {
@@ -106,6 +106,17 @@ namespace deSPICYtoINVADER
                 Console.Write(GAME_OVER[i]);
             }
             Console.ResetColor();
+            Thread.Sleep(3000);
+
+            Console.Clear();
+            Sound.BackMusic("Keyboard");
+            for (int i = 0; i < END_MESSAGE.Length; i++)
+            {
+                Console.Write(END_MESSAGE[i]);
+                System.Threading.Thread.Sleep(50);
+            }
+            Console.WriteLine(Player.Score);
+            Console.Read();
         }
 
         /// <summary>

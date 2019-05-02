@@ -29,6 +29,14 @@ namespace deSPICYtoINVADER.utils
             }
         }
 
+        public static void StopMusic()
+        {
+            foreach (SoundPlayer s in _backgroudMusic)
+            {
+                s.Stop();
+            }
+        }
+
         public static void PlaySound(string name)
         {
             if (true == true)//Menu : son off
