@@ -31,3 +31,16 @@ F:\ETML\226-Prog-ImplementerOO\SpicyNvader\Jonathan\deSPICYtoINVADER\deSPICYtoIN
 F:\ETML\226-Prog-ImplementerOO\SpicyNvader\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\EnemyHit.wav
 F:\ETML\226-Prog-ImplementerOO\SpicyNvader\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Hurt.wav
 F:\ETML\226-Prog-ImplementerOO\SpicyNvader\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Keyboard.wav
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Bow.wav
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\DarudeHard.wav
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\DarudePiano.wav
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\EnemyHit.wav
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Hurt.wav
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Keyboard.wav
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\deSPICYtoINVADER.exe.config
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\deSPICYtoINVADER.exe
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\deSPICYtoINVADER.pdb
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csprojAssemblyReference.cache
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csproj.CoreCompileInputs.cache
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.exe
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.pdb

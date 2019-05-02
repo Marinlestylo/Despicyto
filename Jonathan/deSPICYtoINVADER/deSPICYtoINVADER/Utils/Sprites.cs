@@ -47,10 +47,5 @@
                "█ ███████ █",
                "█ █     █ █",
                "   ██ ██   " }; //Design du monstre*/
-
-        public static readonly string[] Bullet = new string[]
-        {
-            "▓"
-        };
     }
 }
