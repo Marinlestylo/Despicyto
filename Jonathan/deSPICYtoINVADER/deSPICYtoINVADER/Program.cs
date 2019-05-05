@@ -11,8 +11,10 @@ namespace deSPICYtoINVADER
     {
         static void Main(string[] args)
         {
-            Game game = new Game();
-            game.GameLoop();
+            Menu menu = new Menu();
+            menu.LoadMenu();
+            /*Game game = new Game();
+            game.GameLoop();*/
             Console.ReadLine();
         }
     }

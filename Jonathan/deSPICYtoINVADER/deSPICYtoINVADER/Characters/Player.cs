@@ -26,7 +26,7 @@ namespace deSPICYtoINVADER.Characters
         /// <summary>
         /// Constructeur de la classe, il reprend le constructeur de "Character"
         /// </summary>
-        public Player() : base(4, new Point(Game.WIDTH_OF_WIDOWS / 2, Game.HEIGHT_OF_WINDOWS - Sprites.Player.Length - 1 ))
+        public Player() : base(9, new Point(Game.WIDTH_OF_WIDOWS / 2, Game.HEIGHT_OF_WINDOWS - Sprites.Player.Length - 1 ))
         {
             _design = Sprites.Player;
             Score = 0;

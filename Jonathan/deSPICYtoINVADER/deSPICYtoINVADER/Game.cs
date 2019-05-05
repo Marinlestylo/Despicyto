@@ -39,6 +39,7 @@ namespace deSPICYtoINVADER
         private Swarm _swarm = new Swarm(5, 7);
         private Player _user = new Player();
         private Stopwatch _stopTime = new Stopwatch();
+        private Menu _menu = new Menu();
 
         /// <summary>
         /// Constructeur de la classe Game

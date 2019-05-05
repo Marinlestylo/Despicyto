@@ -50,6 +50,7 @@
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Characters\Player.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Swarm.cs" />
     <Compile Include="Utils\Sound.cs" />
     <Compile Include="Utils\Utils.cs" />
