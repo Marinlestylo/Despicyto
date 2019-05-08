@@ -15,7 +15,7 @@ namespace deSPICYtoINVADER
         /// <summary>
         /// Liste de tous les ennemis dans l'essaim
         /// </summary>
-        public List<Enemy> Enemies { get; }
+        public List<Enemy> Enemies { get; private set; }
 
         /* Attributs */
         private int _direction;//Direction de l'essaim
@@ -50,6 +50,11 @@ namespace deSPICYtoINVADER
             EnemyUpdate();
             DeleteEnemy();
             Invasion();
+        }
+
+        public void reset()
+        {
+            Enemies = new List<Enemy>();
         }
 
         /// <summary>

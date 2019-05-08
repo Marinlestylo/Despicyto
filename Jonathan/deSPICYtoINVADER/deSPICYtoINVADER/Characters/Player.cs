@@ -15,6 +15,7 @@ namespace deSPICYtoINVADER.Characters
 
         /* Attributs */
         private const int INVINCIBLE_TIMING = 201;//Faire finir le int par un pour commencer à clignoter immédiatement
+        private const int MAX_LIVES = 2;
 
         private List<Point> _touched;
         private bool _autoMove;
@@ -26,7 +27,7 @@ namespace deSPICYtoINVADER.Characters
         /// <summary>
         /// Constructeur de la classe, il reprend le constructeur de "Character"
         /// </summary>
-        public Player() : base(9, new Point(Game.WIDTH_OF_WIDOWS / 2, Game.HEIGHT_OF_WINDOWS - Sprites.playerDesign.Length - 1 ))
+        public Player() : base(MAX_LIVES, new Point(Game.WIDTH_OF_WIDOWS / 2, Game.HEIGHT_OF_WINDOWS - Sprites.playerDesign.Length - 1 ))
         {
             _design = Sprites.playerDesign;
             Score = 0;
@@ -71,6 +72,12 @@ namespace deSPICYtoINVADER.Characters
         public static void AddOnScore(int points)
         {
             Score += points;
+        }
+
+        public void Reset()
+        {
+            Life = MAX_LIVES;
+            GonnaDelete = false;
         }
         #endregion
 

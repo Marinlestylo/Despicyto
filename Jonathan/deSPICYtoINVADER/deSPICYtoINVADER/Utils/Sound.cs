@@ -25,6 +25,12 @@ namespace deSPICYtoINVADER.utils
                     case "Keyboard":
                         _backgroudMusic[2].PlayLooping();
                         break;
+                    case "stop":
+                        for (int i = 0; i < _backgroudMusic.Count; i++)
+                        {
+                            _backgroudMusic[i].Stop();
+                        }
+                        break;
                 }
             }
         }
