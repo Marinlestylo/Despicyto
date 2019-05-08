@@ -67,7 +67,7 @@ namespace deSPICYtoINVADER
                 {
                     for (int j = 0; j < col; j++)
                     {
-                        Enemies.Add(new Enemy(new Point(9 + j * 13, 2 + i * 9), Sprites.Enemy));
+                        Enemies.Add(new Enemy(new Point(9 + j * 13, 2 + i * 9), Sprites.enemyDesign));
                     }
                 }
             }
@@ -163,7 +163,7 @@ namespace deSPICYtoINVADER
         {
             foreach (Enemy e in Enemies)
             {
-                if (e.BottomRightCorner.Y >= Game.HEIGHT_OF_WINDOWS - Sprites.Player.Length - 1)
+                if (e.BottomRightCorner.Y >= Game.HEIGHT_OF_WINDOWS - Sprites.playerDesign.Length - 1)
                 {
                     GoDown();
                     Game.gameRunning = false;

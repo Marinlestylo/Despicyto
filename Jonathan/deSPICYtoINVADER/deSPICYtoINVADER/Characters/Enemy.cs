@@ -100,7 +100,7 @@ namespace deSPICYtoINVADER.Characters
         {
             if (Utils.RandomValue(1001) == 42)
             {
-                Game.allBullets.Add(new Bullet(new Point(_position.X, _position.Y + Sprites.Enemy.Length), 1));
+                Game.allBullets.Add(new Bullet(new Point(_position.X, _position.Y + Sprites.enemyDesign.Length), 1));
             }
         }
 

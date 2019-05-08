@@ -43,7 +43,6 @@ F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVA
 F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csproj.CoreCompileInputs.cache
 F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.exe
 F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.pdb
-F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csprojResolveAssemblyReference.cache
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Bow.wav
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\DarudeHard.wav
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\DarudePiano.wav
@@ -57,3 +56,4 @@ D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVA
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csproj.CoreCompileInputs.cache
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.exe
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.pdb
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csprojAssemblyReference.cache

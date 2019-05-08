@@ -15,7 +15,6 @@ namespace deSPICYtoINVADER
             menu.LoadMenu();
             /*Game game = new Game();
             game.GameLoop();*/
-            Console.ReadLine();
         }
     }
 }

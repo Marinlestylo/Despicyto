@@ -26,9 +26,9 @@ namespace deSPICYtoINVADER.Characters
         /// <summary>
         /// Constructeur de la classe, il reprend le constructeur de "Character"
         /// </summary>
-        public Player() : base(9, new Point(Game.WIDTH_OF_WIDOWS / 2, Game.HEIGHT_OF_WINDOWS - Sprites.Player.Length - 1 ))
+        public Player() : base(9, new Point(Game.WIDTH_OF_WIDOWS / 2, Game.HEIGHT_OF_WINDOWS - Sprites.playerDesign.Length - 1 ))
         {
-            _design = Sprites.Player;
+            _design = Sprites.playerDesign;
             Score = 0;
             _touched = new List<Point>();
             _autoMove = false;
@@ -95,11 +95,11 @@ namespace deSPICYtoINVADER.Characters
         /// <returns>return true si le joueur peut encore avancer, false sinon</returns>
         private bool CanIMove()
         {
-            if (_direction == 1 && _position.X == Game.WIDTH_OF_WIDOWS - 1 - Game.MARGIN - (Sprites.Player[9].Length / 2))
+            if (_direction == 1 && _position.X == Game.WIDTH_OF_WIDOWS - 1 - Game.MARGIN - (Sprites.playerDesign[9].Length / 2))
             {
                 return false;
             }
-            else if (_direction == -1 && _position.X == Game.MARGIN + (Sprites.Player[9].Length / 2))
+            else if (_direction == -1 && _position.X == Game.MARGIN + (Sprites.playerDesign[9].Length / 2))
             {
                 return false;
             }
@@ -208,12 +208,12 @@ namespace deSPICYtoINVADER.Characters
                 }
                 else if((_invincible - Game.tics) % 10 == 0)
                 {
-                    _design = Sprites.Player;
+                    _design = Sprites.playerDesign;
                 }
             }
             else
             {
-                _design = Sprites.Player;
+                _design = Sprites.playerDesign;
             }
         }
 
@@ -223,10 +223,10 @@ namespace deSPICYtoINVADER.Characters
         /// </summary>
         private void GetHitBox()
         {
-            for (int i = 0; i < Sprites.Player.Length; i++)
+            for (int i = 0; i < Sprites.playerDesign.Length; i++)
             {
-                _touched.Add(new Point(_position.X - Sprites.Player[i].Length / 2, _position.Y + i));//premier point de la ligne
-                _touched.Add(new Point(_position.X + Sprites.Player[i].Length / 2, _position.Y + i));//dernier point de la ligne
+                _touched.Add(new Point(_position.X - Sprites.playerDesign[i].Length / 2, _position.Y + i));//premier point de la ligne
+                _touched.Add(new Point(_position.X + Sprites.playerDesign[i].Length / 2, _position.Y + i));//dernier point de la ligne
             }
         }
         #endregion

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using deSPICYtoINVADER.utils;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace deSPICYtoINVADER
@@ -12,24 +14,11 @@ namespace deSPICYtoINVADER
         /* Constantes */
         private const int WIDTH_OF_MENU = 80;//Taille du buffer et fenêtre
         private const int HEIGHT_OF_MENU = 25;//Taille du buffer et fenêtre
-        private const int LEFT_MARGE_TITLE = 10;//Marge à gauche du titre
-        private const int TOP_MARGE_TITLE = 0;//Marge en haut du titre
-        private const int LEFT_MARGE_MENU = 24;//Marge à gauche des options
-        private const int TOP_MARGE_MENU = 10;//Marge en haut des options
         private const int TOP_SPACE_MENU = 3;//Espace entre les options (hauteur)
-        private readonly string[] TITLE = new string[8]// tableau de string qui contient le titre 
-        {
-            "   _____       _            _ _   _                _           ",
-            "  / ____|     (_)          ( ) \\ | |              | |          ",
-            " | (___  _ __  _  ___ _   _|/|  \\| |_   ____ _  __| | ___ _ __ ",
-            "  \\___ \\| '_ \\| |/ __| | | | | . ` \\ \\ / / _` |/ _` |/ _ \\ '__|",
-            "  ____) | |_) | | (__| |_| | | |\\  |\\ V / (_| | (_| |  __/ |   ",
-            " |_____/| .__/|_|\\___|\\__, | |_| \\_| \\_/ \\__,_|\\__,_|\\___|_|   ",
-            "        | |            __/ |                                   ",
-            "        |_|           |___/                                    "
-        };
 
-        private string[] _options = new string[5] { "Jouer", "Options", "Score haut", "A propos", "Quitter" };
+        /* Readonly */
+        private readonly Point titlePadding = new Point(10, 0);
+        private readonly Point menuPadding = new Point(24, 10);
 
         /// <summary>
         /// Difficulté du jeu. Plus le chiffre est élevé plus les enemies ont des chances de tirer
@@ -41,14 +30,18 @@ namespace deSPICYtoINVADER
         public static bool Sound { get; private set; }
 
         /* Attributs */
+        private string[] _options = new string[5] { "Jouer", "Options", "HautScore", "A propos", "Quitter" };
         private int _index;
-        private bool _loadGame;
+        private bool _closeGame;
 
-
+        /// <summary>
+        /// Constructeur du menu
+        /// set l'index à 0
+        /// </summary>
         public Menu()
         {
             _index = 0;
-            _loadGame = false;
+            _closeGame = false;//ATTENTIOn a delete?
         }
 
         public void LoadMenu()
@@ -63,16 +56,16 @@ namespace deSPICYtoINVADER
         private void ShowMenu()
         {
             //Boucle pour le titre
-            for (int i = 0; i < TITLE.Length; i++)
+            for (int i = 0; i < Sprites.mainTitle.Length; i++)
             {
-                Console.SetCursorPosition(LEFT_MARGE_TITLE, TOP_MARGE_TITLE + i);
-                Console.WriteLine(TITLE[i]);
+                Console.SetCursorPosition(titlePadding.X , titlePadding.Y + i);
+                Console.WriteLine(Sprites.mainTitle[i]);
             }
 
             //boucle pour les options du menu
             for (int i = 0; i < _options.Length; i++)
             {
-                Console.SetCursorPosition(LEFT_MARGE_MENU, TOP_MARGE_MENU + i * TOP_SPACE_MENU);
+                Console.SetCursorPosition(menuPadding.X, menuPadding.Y + i * TOP_SPACE_MENU);
                 Console.WriteLine(_options[i]);
             }
             //Curseur du menu
@@ -88,16 +81,16 @@ namespace deSPICYtoINVADER
             //Effacer le cursor puis l'écrir afin de donner l'impression d'un mouvement
             for (int i = 0; i < _options.Length; i++)
             {
-                Console.SetCursorPosition(LEFT_MARGE_MENU - 2, TOP_MARGE_MENU + i * TOP_SPACE_MENU);
-                Console.WriteLine(" ");
-                Console.SetCursorPosition(LEFT_MARGE_MENU + _options[i].Length + 1, TOP_MARGE_MENU + i * TOP_SPACE_MENU);
-                Console.WriteLine(" ");
+                Console.SetCursorPosition(menuPadding.X - 3, menuPadding.Y + i * TOP_SPACE_MENU);
+                Console.WriteLine("  ");
+                Console.SetCursorPosition(menuPadding.X + _options[i].Length + 1, menuPadding.Y + i * TOP_SPACE_MENU);
+                Console.WriteLine("  ");
             }
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(LEFT_MARGE_MENU - 2, TOP_MARGE_MENU + _index * TOP_SPACE_MENU);//Position du chevron de gauche
-            Console.Write('>');
-            Console.SetCursorPosition(LEFT_MARGE_MENU + _options[_index].Length + 1, TOP_MARGE_MENU + _index * TOP_SPACE_MENU);//Position du chevron de droite
-            Console.Write('<');
+            Console.SetCursorPosition(menuPadding.X - 3, menuPadding.Y + _index * TOP_SPACE_MENU);//Position du chevron de gauche
+            Console.Write(">>");
+            Console.SetCursorPosition(menuPadding.X + _options[_index].Length + 1, menuPadding.Y + _index * TOP_SPACE_MENU);//Position du chevron de droite
+            Console.Write("<<");
             Console.ResetColor();
         }
 
@@ -106,31 +99,45 @@ namespace deSPICYtoINVADER
             switch (_index)
             {
                 case 0:
-                    _loadGame = true;
                     break;
                 case 1:
                     break;
                 case 2:
+                    HighScore();
                     break;
                 case 3:
                     About();
                     break;
                 case 4:
-                    Environment.Exit(42);
+                    _closeGame = true;
                     break;
             }
         }
 
         /// <summary>
-        /// Permet de revenir au menu principal
+        /// Détecte si on presse la touche escape afin de revenir au menu
         /// </summary>
-        private void ReturnToMenu()
+        /// <returns>true si escape est pressed, false sinon</returns>
+        private bool EscapePressed()
         {
             if (Console.ReadKey(true).Key == ConsoleKey.Escape)
             {
                 Console.Clear();
                 ShowMenu();
-                return;
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Boucle qui ne fait rien tant que la condition EscapePressed n'est pas a true.
+        /// Dès qu'elle est a true (touche escape pressed), on revient au menu
+        /// </summary>
+        private void ReturnToMenu()
+        {
+            while (!EscapePressed())
+            {
+                Thread.Sleep(50);
             }
         }
 
@@ -140,17 +147,21 @@ namespace deSPICYtoINVADER
         private void About()
         {
             Console.Clear();
-            Console.WriteLine("instert random bullshit here");//texte à modifier:)
-            while (true)
-            {
-                ReturnToMenu();
-            }
+            Sprites.DrawTitle(Sprites.aboutTitle, new Point(15, 0));
+            Console.SetCursorPosition(33, 6);
+            Console.WriteLine("Created by :");
+            Sprites.DrawTitle(Sprites.joAscii, new Point(2, 8));
+            Sprites.DrawTitle(Sprites.andAscii, new Point(10, 16));
+            ReturnToMenu();
         }
 
         private void HighScore()
         {
             Console.Clear();
-            Console.WriteLine("Highscore");
+            Sprites.DrawTitle(Sprites.highScoreTitle, new Point(5, 0));
+            Console.WriteLine("Highscore");//texte à modifier:)
+            Console.WriteLine("Appoui sur escape pour reviendre en arrière !");//texte à modifier:)
+            ReturnToMenu();
         }
 
         /// <summary>
@@ -158,7 +169,7 @@ namespace deSPICYtoINVADER
         /// </summary>
         private void Navigate()
         {
-            while (!_loadGame)
+            while (!_closeGame)
             {
                 if (Console.KeyAvailable)
                 {

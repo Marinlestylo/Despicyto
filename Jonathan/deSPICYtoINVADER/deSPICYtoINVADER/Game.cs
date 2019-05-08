@@ -17,15 +17,6 @@ namespace deSPICYtoINVADER
         public const int HEIGHT_OF_WINDOWS = 80;
         public const int MARGIN = 4;//Marge de chaque de côté
         private const string END_MESSAGE = "Suite à votre malencontreuse défaite contre ces aliens, ma foi plutôt nuls, ils ont envahi la terre et asservi les humains.\n Vous en êtes l'unique responsable. BRAVO !\n Votre score est de : ";
-        private readonly string[] GAME_OVER= new string[] 
-        {
-            "  ______       ___       ___  ___   _______      ______   ____    ____  _______  ______  ",
-            " /  ____|     /   \\     |   \\/   | |   ____|    /  __  \\  \\   \\  /   / |   ____||   _  \\",
-            "|  |  __     /  ^  \\    |  \\  /  | |  |__      |  |  |  |  \\   \\/   /  |  |__   |  |_)  |",
-            "|  | |_ |   /  /_\\  \\   |  |\\/|  | |   __|     |  |  |  |   \\      /   |   __|  |      /",
-            "|  |__| |  /  _____  \\  |  |  |  | |  |____    |  `--'  |    \\    /    |  |____ |  |\\  \\_",
-            " \\______| /__/     \\__\\ |__|  |__| |_______|    \\______/      \\__/     |_______|| _| `.__|"
-        };
 
         /* Static */
         public static int tics = 0;
@@ -101,10 +92,10 @@ namespace deSPICYtoINVADER
         {
             Sound.StopMusic();
             Console.ForegroundColor = ConsoleColor.Red;
-            for (int i = 0; i < GAME_OVER.Length; i++)
+            for (int i = 0; i < Sprites.gameOver.Length; i++)
             {
                 Console.SetCursorPosition(30, 30 + i);
-                Console.Write(GAME_OVER[i]);
+                Console.Write(Sprites.gameOver[i]);
             }
             Console.ResetColor();
             Thread.Sleep(3000);
