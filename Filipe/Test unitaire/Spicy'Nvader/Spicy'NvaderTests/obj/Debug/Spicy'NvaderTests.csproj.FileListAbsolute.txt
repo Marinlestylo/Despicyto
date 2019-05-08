@@ -22,3 +22,27 @@ C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'Nvade
 C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.csproj.CopyComplete
 C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.dll
 C:\Users\andradebfi\Desktop\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\Bullet.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\Darude - Sandstorm.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\Hurt.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Sounds\KeyTouchNoise.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'NvaderTests.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'NvaderTests.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'Nvader.exe
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'Nvader.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Spicy'Nvader.exe.config
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.csprojAssemblyReference.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.csproj.CoreCompileInputs.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.csproj.CopyComplete
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\Spicy'Nvader\Spicy'NvaderTests\obj\Debug\Spicy'NvaderTests.pdb

@@ -62,3 +62,11 @@ F:\FIN1\PROJETS\032-P_Dev\SpicyNvader\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'
 F:\FIN1\PROJETS\032-P_Dev\SpicyNvader\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'Nvader.csproj.CoreCompileInputs.cache
 F:\FIN1\PROJETS\032-P_Dev\SpicyNvader\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'Nvader.exe
 F:\FIN1\PROJETS\032-P_Dev\SpicyNvader\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'Nvader.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\bin\Debug\Darude - Sandstorm.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\bin\Debug\Spicy'Nvader.exe.config
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\bin\Debug\Spicy'Nvader.exe
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\bin\Debug\Spicy'Nvader.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'Nvader.csprojAssemblyReference.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'Nvader.csproj.CoreCompileInputs.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'Nvader.exe
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\20.03\Spicy'Nvader\obj\Debug\Spicy'Nvader.pdb

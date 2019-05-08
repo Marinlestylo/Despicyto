@@ -9,7 +9,7 @@ namespace Spicy_Nvader
     public class Enemy
     {
         //Pour la hitbox de l'ennemy
-        public bool GonnaDelete { get; private set; }
+        public bool GonnaDelete { get; set; }
         public int MinX { get; private set; }//tout à gauche
         public int MaxX { get; private set; }//tout à droite
         public int MaxY { get; private set; }//tout en bas
