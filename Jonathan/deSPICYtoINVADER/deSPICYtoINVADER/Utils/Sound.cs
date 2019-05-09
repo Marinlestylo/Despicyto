@@ -12,7 +12,7 @@ namespace deSPICYtoINVADER.utils
 
         public static void BackMusic(string name)
         {
-            if (true == true)//Menu : son off
+            if (Menu.Sound)//Menu : son off
             {
                 switch (name)
                 {
@@ -45,7 +45,7 @@ namespace deSPICYtoINVADER.utils
 
         public static void PlaySound(string name)
         {
-            if (true == true)//Menu : son off
+            if (Menu.Sound)//Menu : son off
             {
                 switch (name)
                 {

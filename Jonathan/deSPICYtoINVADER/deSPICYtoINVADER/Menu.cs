@@ -37,6 +37,7 @@ namespace deSPICYtoINVADER
         private string[] _optionValues = new string[4] {"CFC (Facile)    ", "FIN (Difficile)", "ON ", "OFF" }; //Tableau avec les valeurs des options
         private int _index;//Index du menu
         private bool _loadGame;
+        private Game _game;
 
         /// <summary>
         /// Constructeur du menu
@@ -46,7 +47,7 @@ namespace deSPICYtoINVADER
         {
             _index = 0;
             CloseGame = false;
-            Difficulty = 5;
+            Difficulty = 2;
             Sound = true;
         }
 
@@ -136,6 +137,9 @@ namespace deSPICYtoINVADER
             {
                 case 0://lance le jeu
                     _loadGame = true;
+                    _game = new Game();
+                    _game.GameLoop();
+                    LoadMenu();
                     break;
                 case 1://Ouvre les options
                     Option();
@@ -179,14 +183,14 @@ namespace deSPICYtoINVADER
         private void ChangeDifficulty()
         {
             Console.SetCursorPosition(45, 13);
-            if (Difficulty == 5)
+            if (Difficulty == 2)
             {
                 Difficulty = 1;
                 Console.WriteLine(_optionValues[0]);
             }
             else
             {
-                Difficulty = 5;
+                Difficulty = 2;
                 Console.WriteLine(_optionValues[1]);
             }
         }
@@ -260,7 +264,7 @@ namespace deSPICYtoINVADER
             Console.SetCursorPosition(24, 13);
             Console.WriteLine(_optionsName[0]);
             Console.SetCursorPosition(45, 13);
-            if (Difficulty == 5)
+            if (Difficulty == 2)
             {
                 Console.WriteLine(_optionValues[1]);
             }

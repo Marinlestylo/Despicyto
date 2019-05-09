@@ -98,7 +98,7 @@ namespace deSPICYtoINVADER.Characters
         /// </summary>
         protected override void Shoot()
         {
-            if (Utils.RandomValue(1001) == 42)
+            if (Utils.RandomValue(3001) < Menu.Difficulty * 3)
             {
                 Game.allBullets.Add(new Bullet(new Point(_position.X, _position.Y + Sprites.enemyDesign.Length), 1));
             }

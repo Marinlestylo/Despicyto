@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ namespace deSPICYtoINVADER
 {
     public class Game
     {
+        [DllImport("user32.dll", EntryPoint = "BlockInput")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool BlockInput([MarshalAs(UnmanagedType.Bool)]bool fBlockIt);
         /* Constantes */
         public const int WIDTH_OF_WIDOWS = 150;
         public const int HEIGHT_OF_WINDOWS = 80;
@@ -30,7 +34,6 @@ namespace deSPICYtoINVADER
         private Swarm _swarm = new Swarm(5, 7);
         private Player _user = new Player();
         private Stopwatch _stopTime = new Stopwatch();
-        private Menu _menu = new Menu();
 
         /// <summary>
         /// Constructeur de la classe Game
@@ -58,37 +61,33 @@ namespace deSPICYtoINVADER
 
         public void GameLoop()
         {
-            while (!_menu.CloseGame)
+            SetWindow();
+            Sound.BackMusic("Piano");
+            while (!_user.GonnaDelete && gameRunning)
             {
-                _menu.LoadMenu();
-                SetWindow();
-                Sound.BackMusic("Piano");
-                while (!_user.GonnaDelete && gameRunning)
-                {
-                    /* Début de boucle */
-                    _stopTime.Restart();
-                    if (tics == int.MaxValue)//tics (si les tics sont au max, on les remets à 0)
-                        tics = 0;
-                    /* Début de boucle */
+                /* Début de boucle */
+                _stopTime.Restart();
+                if (tics == int.MaxValue)//tics (si les tics sont au max, on les remets à 0)
+                    tics = 0;
+                /* Début de boucle */
 
-                    ResetArray();//Reset le tableau de char, le remet vide
+                ResetArray();//Reset le tableau de char, le remet vide
 
-                    GameUpdate();//Update tout (Bullet, Enemy, le swarm et player). Durant l'update, plein de chose vont se noter dans le tableau allChars
+                GameUpdate();//Update tout (Bullet, Enemy, le swarm et player). Durant l'update, plein de chose vont se noter dans le tableau allChars
 
-                    FromArrayToString();//Transforme le tableau en un string, va en 0,0  et l'écrit.
+                FromArrayToString();//Transforme le tableau en un string, va en 0,0  et l'écrit.
 
 
 
-                    /* Fin de boucle */
-                    tics++;
-                    int ts = (int)_stopTime.ElapsedMilliseconds;//"Stabiliser" la vitesse, indépendemment des ordis
-                    if (ts > 10)
-                        ts = 10;
-                    Thread.Sleep(10 - ts);
-                    /* Fin de boucle */
-                }
-                GameOver();
+                /* Fin de boucle */
+                tics++;
+                int ts = (int)_stopTime.ElapsedMilliseconds;//"Stabiliser" la vitesse, indépendemment des ordis
+                if (ts > 10)
+                    ts = 10;
+                Thread.Sleep(10 - ts);
+                /* Fin de boucle */
             }
+            GameOver();
         }
 
         /// <summary>
@@ -105,19 +104,24 @@ namespace deSPICYtoINVADER
                 Console.Write(Sprites.gameOver[i]);
             }
             Console.ResetColor();
-            Thread.Sleep(3000);
+            Thread.Sleep(1500);
 
             Console.Clear();
             Sound.BackMusic("Keyboard");
             for (int i = 0; i < END_MESSAGE.Length; i++)
             {
                 Console.Write(END_MESSAGE[i]);
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(20);
             }
             Console.WriteLine(Player.Score);
             Sound.BackMusic("stop");
             Thread.Sleep(1000);
             Console.Clear();
+            ResetGame();
+            while(Console.KeyAvailable)//Eviter de spam espace/enter pendant les animations et relancer le jeu par erreur
+            {
+                Console.ReadKey(true);
+            }
         }
 
         public void ResetGame()
@@ -199,7 +203,7 @@ namespace deSPICYtoINVADER
         /// </summary>
         private void FromArrayToString()
         {
-            if (_user.Life < 4)
+            if (_user.Life < (Player.MAX_LIVES / 3) + 1)
             {
                 Console.ForegroundColor = (ConsoleColor)Utils.RandomValue(9, 16);
             }

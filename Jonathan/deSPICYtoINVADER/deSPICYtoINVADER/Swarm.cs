@@ -21,6 +21,7 @@ namespace deSPICYtoINVADER
         private int _direction;//Direction de l'essaim
         private int _lastDirection;//Comme l'essaim n'a pas de position, on détecte que l'on doit descendre les Enemy 
         //quand _direction et _LastDirection ne sont plus pareil
+        private int swarmCounter;
 
         /// <summary>
         /// Constructeur de la classe Swarm
@@ -31,6 +32,7 @@ namespace deSPICYtoINVADER
             _direction = 1;
             _lastDirection = _direction;
             Create(row, col);
+            swarmCounter = 1;
         }
 
         /// <summary>
@@ -40,8 +42,9 @@ namespace deSPICYtoINVADER
         {
             if (Enemies.Count == 0)
             {
-                Player.AddOnScore(217);
-                Create(5, 5);
+                Player.AddOnScore(218 * swarmCounter);
+                Create(5, 7);
+                swarmCounter++;
             }
             if (Game.tics % 7 == 0)
             {

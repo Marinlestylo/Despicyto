@@ -15,7 +15,7 @@ namespace deSPICYtoINVADER.Characters
 
         /* Attributs */
         private const int INVINCIBLE_TIMING = 201;//Faire finir le int par un pour commencer à clignoter immédiatement
-        private const int MAX_LIVES = 2;
+        public const int MAX_LIVES = 3;
 
         private List<Point> _touched;
         private bool _autoMove;
@@ -71,7 +71,14 @@ namespace deSPICYtoINVADER.Characters
 
         public static void AddOnScore(int points)
         {
-            Score += points;
+            if (Menu.Difficulty == 2)
+            {
+                Score += points * 7;
+            }
+            else
+            {
+                Score += points;
+            }
         }
 
         public void Reset()
@@ -191,7 +198,7 @@ namespace deSPICYtoINVADER.Characters
                         _invincible = Game.tics + INVINCIBLE_TIMING;
                         Sound.PlaySound("hurt");
                         bull.GonnaDelete = true;//Supprimer la bullet qui nous a blessé
-                        if (Life == 3)
+                        if (Life == MAX_LIVES/3)
                         {
                             Sound.BackMusic("hard");
                         }
