@@ -57,10 +57,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BulletTests.cs" />
+    <Compile Include="Characters\EnemyTests.cs" />
     <Compile Include="Characters\PlayerTests.cs" />
+    <Compile Include="GameTests.cs" />
     <Compile Include="MenuTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwarmTests.cs" />
+    <Compile Include="Utils\PointTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

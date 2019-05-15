@@ -24,3 +24,29 @@ C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deS
 C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.csproj.CopyComplete
 C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.dll
 C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Utils\Sounds\Bow.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Utils\Sounds\DarudeHard.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Utils\Sounds\DarudePiano.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Utils\Sounds\EnemyHit.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Utils\Sounds\Hurt.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Utils\Sounds\Keyboard.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\deSPICYtoINVADERTests.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\deSPICYtoINVADERTests.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\deSPICYtoINVADER.exe
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\deSPICYtoINVADER.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\deSPICYtoINVADER.exe.config
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.csprojAssemblyReference.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.csproj.CoreCompileInputs.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.csproj.CopyComplete
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.dll
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADERTests\obj\Debug\deSPICYtoINVADERTests.pdb

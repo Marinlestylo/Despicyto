@@ -75,7 +75,6 @@ namespace deSPICYtoINVADER
                 FromArrayToString();//Transforme le tableau en un string, va en 0,0  et l'écrit.
 
 
-
                 /* Fin de boucle */
                 tics++;
                 int ts = (int)_stopTime.ElapsedMilliseconds;//"Stabiliser" la vitesse, indépendemment des ordis

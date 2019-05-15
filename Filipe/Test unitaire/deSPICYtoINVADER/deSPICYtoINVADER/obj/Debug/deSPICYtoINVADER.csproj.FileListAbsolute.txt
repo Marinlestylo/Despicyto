@@ -70,3 +70,16 @@ C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYt
 C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csproj.CoreCompileInputs.cache
 C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.exe
 C:\Users\andradebfi\Desktop\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Bow.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\DarudeHard.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\DarudePiano.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\EnemyHit.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Hurt.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Utils\Sounds\Keyboard.wav
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\deSPICYtoINVADER.exe.config
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\deSPICYtoINVADER.exe
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\deSPICYtoINVADER.pdb
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csprojAssemblyReference.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csproj.CoreCompileInputs.cache
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.exe
+F:\FIN1\PROJETS\032-P_Dev\Despicyto\Filipe\Test unitaire\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.pdb

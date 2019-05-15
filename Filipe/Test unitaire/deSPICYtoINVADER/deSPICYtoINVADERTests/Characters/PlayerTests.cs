@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace deSPICYtoINVADER.Characters.Tests
 {
@@ -40,7 +41,20 @@ namespace deSPICYtoINVADER.Characters.Tests
         [TestMethod()]
         public void GetShotTest()
         {
-            Assert.Fail();
+            // Arrange
+            Player play;
+            Bullet b;
+            int x = 75;
+            int y = 69;
+            int direction = 1;
+
+            //Act
+            play = new Player();
+            b = new Bullet(new Point(x,y), direction);
+            play.GetShot(b);
+
+            // Assert
+            Assert.AreEqual(8, play.Life);
         }
     }
 }

@@ -47,40 +47,19 @@ namespace deSPICYtoINVADER.Tests
         {
             // Arrange
             Swarm sw;
-            Point p;
             Bullet bul;
-            Enemy e;
             int row = 5;
             int col = 5;
-            int D = 1;
+            int D = -1;
 
             //Act
             sw = new Swarm(row, col);
-            p = new Point(row, col);
-            bul = new Bullet(p, D);
-            e = new Enemy(p, utils.Sprites.playerDesign);
-            e.GetShot(bul);
+            bul = new Bullet(new Point(5,5), D);
+            sw.Enemies[0].GetShot(bul);
             sw.DeleteEnemy();
 
             // Assert
             Assert.AreEqual(24, sw.Enemies.Count);
-        }
-
-        [TestMethod()]
-        public void MoveTest()
-        {
-            // Arrange
-            Swarm sw;
-            int row = 5;
-            int col = 5;
-            int D = 1;
-
-            //Act
-            sw = new Swarm(row, col);
-            sw.Move(D);
-
-            // Assert
-            Assert.AreEqual(6, sw.Enemies[0]);
         }
     }
 }
