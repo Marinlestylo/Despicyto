@@ -1,4 +1,4 @@
-﻿using deSPICYtoINVADER.utils;
+﻿using deSPICYtoINVADER.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,12 +32,13 @@ namespace deSPICYtoINVADER
         public bool CloseGame { get; private set; }//Si = true, le jeu se ferme
 
         /* Attributs */
-        private string[] _options = new string[5] { "Jouer", "Options", "HautScore", "A propos", "Quitter" };//tableau avec le nom des options du menu
-        private string[] _optionsName = new string[2] { "Difficulté", "Son"};//Tableau avec le nom des paramètres dans le options
-        private string[] _optionValues = new string[4] {"CFC (Facile)    ", "FIN (Difficile)", "ON ", "OFF" }; //Tableau avec les valeurs des options
+        private string[] _options;//tableau avec le nom des options du menu
+        private string[] _optionsName;//Tableau avec le nom des paramètres dans le options
+        private string[] _optionValues; //Tableau avec les valeurs des options
         private int _index;//Index du menu
         private bool _loadGame;
         private Game _game;
+        private JsonHighScore _highScore;
 
         /// <summary>
         /// Constructeur du menu
@@ -45,6 +46,10 @@ namespace deSPICYtoINVADER
         /// </summary>
         public Menu()
         {
+            _options = new string[5] { "Jouer", "Options", "HautScore", "A propos", "Quitter" };//tableau avec le nom des options du menu
+            _optionsName = new string[2] { "Difficulté", "Son" };//Tableau avec le nom des paramètres dans le options
+            _optionValues = new string[4] { "Iron IV (Facile)    ", "Silver II (Difficile)", "ON ", "OFF" }; //Tableau avec les valeurs des options
+            _highScore = new JsonHighScore("Resources\\HighScore.json");
             _index = 0;
             CloseGame = false;
             Difficulty = 2;
@@ -139,6 +144,7 @@ namespace deSPICYtoINVADER
                     _loadGame = true;
                     _game = new Game();
                     _game.GameLoop();
+                    HighScore();
                     LoadMenu();
                     break;
                 case 1://Ouvre les options
@@ -247,8 +253,16 @@ namespace deSPICYtoINVADER
         {
             Console.Clear();
             Sprites.DrawTitle(Sprites.highScoreTitle, new Point(5, 0));
-            Console.WriteLine("Highscore");//texte à modifier:)
-            Console.WriteLine("Appoui sur escape pour reviendre en arrière !");//texte à modifier:)
+            List<Score> temp = _highScore.ShowList();
+            for (int i = 0; i < temp.Count; i++)
+            {
+                Console.SetCursorPosition(25, 10 + i);
+                Console.WriteLine(temp[i].Name);
+                Console.SetCursorPosition(41, 10 + i);
+                Console.WriteLine(temp[i].Value);
+            }
+            Console.SetCursorPosition(15, 22);
+            Console.WriteLine("Appuyez sur escape pour retourner au menu");
             ReturnToMenu();
         }
 
@@ -305,7 +319,7 @@ namespace deSPICYtoINVADER
             {
                 if (Console.KeyAvailable)
                 {
-                    switch (Console.ReadKey(true).Key)//Döplacement dans le menu
+                    switch (Console.ReadKey(true).Key)//Déplacement dans le menu
                     {
                         case ConsoleKey.UpArrow://Quand on "Monte"
                             _index--;

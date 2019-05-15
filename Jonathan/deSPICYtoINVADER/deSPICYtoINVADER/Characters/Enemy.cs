@@ -1,4 +1,4 @@
-﻿using deSPICYtoINVADER.utils;
+﻿using deSPICYtoINVADER.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,7 +71,6 @@ namespace deSPICYtoINVADER.Characters
             {
                 bull.GonnaDelete = true;
                 LoseLife();
-                Player.AddOnScore(37);
             }
         }
 
@@ -89,6 +88,7 @@ namespace deSPICYtoINVADER.Characters
             else
             {
                 GonnaDelete = true;
+                Player.AddOnScore(37);
             }
         }
 
@@ -98,7 +98,7 @@ namespace deSPICYtoINVADER.Characters
         /// </summary>
         protected override void Shoot()
         {
-            if (Utils.RandomValue(3001) < Menu.Difficulty * 3)
+            if (Utils.Random.RandomValue(3001) < Menu.Difficulty * 3)
             {
                 Game.allBullets.Add(new Bullet(new Point(_position.X, _position.Y + Sprites.enemyDesign.Length), 1));
             }

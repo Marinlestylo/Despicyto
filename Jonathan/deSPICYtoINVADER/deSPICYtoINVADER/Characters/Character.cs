@@ -1,7 +1,7 @@
-﻿using deSPICYtoINVADER.Characters;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using deSPICYtoINVADER.Utils;
 
-namespace deSPICYtoINVADER
+namespace deSPICYtoINVADER.Characters
 {
     public abstract class Character
     {
@@ -59,7 +59,6 @@ namespace deSPICYtoINVADER
         public virtual void BaseUpdate()
         {
             Draw();
-            Debug.WriteLine("Character : Update()");
         }
 
         public abstract void Update();

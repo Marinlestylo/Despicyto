@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Media;
 using System.Windows.Media;
 
-namespace deSPICYtoINVADER.utils
+namespace deSPICYtoINVADER.Utils
 {
     public static class Sound
     {

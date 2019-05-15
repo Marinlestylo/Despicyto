@@ -1,5 +1,5 @@
 ﻿using deSPICYtoINVADER.Characters;
-using deSPICYtoINVADER.utils;
+using deSPICYtoINVADER.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,14 +13,13 @@ namespace deSPICYtoINVADER
 {
     public class Game
     {
-        [DllImport("user32.dll", EntryPoint = "BlockInput")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool BlockInput([MarshalAs(UnmanagedType.Bool)]bool fBlockIt);
         /* Constantes */
         public const int WIDTH_OF_WIDOWS = 150;
         public const int HEIGHT_OF_WINDOWS = 80;
         public const int MARGIN = 4;//Marge de chaque de côté
-        private const string END_MESSAGE = "Suite à votre malencontreuse défaite contre ces aliens, ma foi plutôt nuls, ils ont envahi la terre et asservi les humains.\n Vous en êtes l'unique responsable. BRAVO !\n Votre score est de : ";
+        private const string END_MESSAGE = ", suite à votre malencontreuse défaite contre ces aliens, ils ont envahi la terre et asservi les humains." +
+                                           "\nVous en êtes l'unique responsable. Cependant la terre étant peuplée d'humains débiles pour la plupart," +
+                                           " ce n'est peut-être pas une si mauvaise chose.\nVotre score est de : ";
 
         /* Static */
         public static int tics = 0;
@@ -31,9 +30,11 @@ namespace deSPICYtoINVADER
 
         /* Attributs */
         //private Enemy _enemy = new Enemy(new Point(15, 15), Sprites.SmallEnemy);
-        private Swarm _swarm = new Swarm(5, 7);
-        private Player _user = new Player();
-        private Stopwatch _stopTime = new Stopwatch();
+        private Swarm _swarm;
+        private Player _user;
+        private Stopwatch _stopTime;
+        private string _username;
+        private JsonHighScore _score;
 
         /// <summary>
         /// Constructeur de la classe Game
@@ -43,6 +44,10 @@ namespace deSPICYtoINVADER
         public Game()
         {
             gameRunning = true;
+            _swarm = new Swarm(5, 7);
+            _user = new Player();
+            _stopTime = new Stopwatch();
+            _score = new JsonHighScore("Resources\\HighScore.json");
         }
 
         /// <summary>
@@ -50,17 +55,31 @@ namespace deSPICYtoINVADER
         /// </summary>
         private void SetWindow()
         {
-            /*Console.WindowHeight = HEIGHT_OF_WINDOWS;
-            Console.WindowWidth = WIDTH_OF_WIDOWS;
-            Console.BufferHeight = HEIGHT_OF_WINDOWS;
-            Console.BufferWidth = WIDTH_OF_WIDOWS;*/
             Console.CursorVisible = false;
             Console.SetBufferSize(WIDTH_OF_WIDOWS, HEIGHT_OF_WINDOWS);
             Console.SetWindowSize(WIDTH_OF_WIDOWS,HEIGHT_OF_WINDOWS);
         }
 
+        private void EnterName()
+        {
+            Console.Clear();
+            bool temp = true;
+            do
+            {
+                Console.SetCursorPosition(25, 13);
+                Console.Write("Entrez votre pseudo : ");
+                _username = Console.ReadLine();
+                if (_username.Length < 16 && _username.Length > 3)
+                {
+                    temp = false;
+                }
+                Console.Clear();
+            } while (temp);
+        }
+
         public void GameLoop()
         {
+            EnterName();
             SetWindow();
             Sound.BackMusic("Piano");
             while (!_user.GonnaDelete && gameRunning)
@@ -90,32 +109,35 @@ namespace deSPICYtoINVADER
             GameOver();
         }
 
+        private void ShowGameOver()
+        {
+            _score.AddScoreInJson(new Score(_username, Player.Score));
+            Sound.StopMusic();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Sprites.DrawTitle(Sprites.gameOver, new Point(30, 30));
+            Console.ResetColor();
+        }
+
         /// <summary>
         /// Quand on perd, le jeu freeze sur un écran avec Game Over écrit en rouge.
         /// Ensuite un message s'affiche contenant le score du joueur
         /// </summary>
         private void GameOver()
         {
-            Sound.StopMusic();
-            Console.ForegroundColor = ConsoleColor.Red;
-            for (int i = 0; i < Sprites.gameOver.Length; i++)
-            {
-                Console.SetCursorPosition(30, 30 + i);
-                Console.Write(Sprites.gameOver[i]);
-            }
-            Console.ResetColor();
+            ShowGameOver();
             Thread.Sleep(1500);
 
             Console.Clear();
             Sound.BackMusic("Keyboard");
+            Console.Write(_username);
             for (int i = 0; i < END_MESSAGE.Length; i++)
             {
                 Console.Write(END_MESSAGE[i]);
-                System.Threading.Thread.Sleep(20);
+                System.Threading.Thread.Sleep(50);
             }
             Console.WriteLine(Player.Score);
             Sound.BackMusic("stop");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Console.Clear();
             ResetGame();
             while(Console.KeyAvailable)//Eviter de spam espace/enter pendant les animations et relancer le jeu par erreur
@@ -205,7 +227,7 @@ namespace deSPICYtoINVADER
         {
             if (_user.Life < (Player.MAX_LIVES / 3) + 1)
             {
-                Console.ForegroundColor = (ConsoleColor)Utils.RandomValue(9, 16);
+                Console.ForegroundColor = (ConsoleColor)Utils.Random.RandomValue(9, 16);
             }
             Console.SetCursorPosition(0, 0);
             everyPixel = "";

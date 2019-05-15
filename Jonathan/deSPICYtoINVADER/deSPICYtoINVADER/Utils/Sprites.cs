@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace deSPICYtoINVADER.utils
+namespace deSPICYtoINVADER.Utils
 {
     public static class Sprites
     {

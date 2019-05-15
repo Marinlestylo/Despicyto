@@ -57,3 +57,7 @@ D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVA
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.exe
 D:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.pdb
 F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csprojAssemblyReference.cache
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Newtonsoft.Json.dll
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Newtonsoft.Json.xml
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\obj\Debug\deSPICYtoINVADER.csproj.CopyComplete
+F:\ETML\226-Prog-ImplementerOO\Despicyto\Jonathan\deSPICYtoINVADER\deSPICYtoINVADER\bin\Debug\Resources\HighScore.json
