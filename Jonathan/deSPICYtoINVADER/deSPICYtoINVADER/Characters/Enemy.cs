@@ -1,12 +1,14 @@
-﻿using deSPICYtoINVADER.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe Enemy qui hérite de la classe character
+using deSPICYtoINVADER.Utils;
 
 namespace deSPICYtoINVADER.Characters
 {
+    /// <summary>
+    /// Classe permettant de créer un enemy, elle hérite de character
+    /// </summary>
     public class Enemy : Character
     {
         /* Propriétés */
@@ -49,11 +51,18 @@ namespace deSPICYtoINVADER.Characters
             Hitbox();//Update la hitbox de l'enemy
         }
 
+        /// <summary>
+        /// Méthode qui sera appellée dans la classe Swarm
+        /// </summary>
+        /// <param name="direction">Soit 1 pour aller à droite soit -1 pour aller à gauche</param>
         public void MoveInSwarm(int direction)
         {
             Move(direction);
         }
 
+        /// <summary>
+        /// Permet de descendre de 3 quand on arrive vers un bord
+        /// </summary>
         public void GoDown()
         {
             _position.Y += 3;

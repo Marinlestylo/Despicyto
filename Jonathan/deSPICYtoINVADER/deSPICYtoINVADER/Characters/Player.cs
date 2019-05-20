@@ -1,28 +1,38 @@
-﻿using deSPICYtoINVADER.Utils;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe Player qui hérite de la classe character
+using deSPICYtoINVADER.Utils;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace deSPICYtoINVADER.Characters
 {
+    /// <summary>
+    /// Classe permettant de créer un player, hérite de character
+    /// </summary>
     public class Player : Character
     {
         /* Propriétés */
+        /// <summary>
+        /// Score du joueur, s'incrémente dans la classe Enemy (enemy tué) et dans la classe Swarm(Essaim tué).
+        /// Variable static car elle doit être appelée dans Swarm et Enemy, il n'y a aucune raison de créer une instance de player la bas.
+        /// </summary>
         public static int Score;
+        /// <summary>
+        /// Nombre de vie max
+        /// </summary>
+        public const int MAX_LIVES = 9;
 
         /* Attributs */
         private const int INVINCIBLE_TIMING = 201;//Faire finir le int par un pour commencer à clignoter immédiatement
-        public const int MAX_LIVES = 3;
+        private const string SCORE = "Score : ";//Affichage du score
+        private const string LIVES = "Vies restantes : ";//afichage des vies
 
-        private List<Point> _touched;
-        private bool _autoMove;
-        private int _nextShootTiming;
-        private int _invincible;
-        private const string SCORE = "Score : ";
-        private const string LIVES = "Vies restantes : ";
+        private List<Point> _touched;//Liste de points constituant la hitbox
+        private bool _autoMove;//bool pour savoir si on est en mode autoMove (Appuyer une fois et ça bouge tout seul)
+        private int _nextShootTiming;//Timing pour savoir quand on peut shooter
+        private int _invincible;//timing de l'invincibilité
 
         /// <summary>
         /// Constructeur de la classe, il reprend le constructeur de "Character"
@@ -38,6 +48,10 @@ namespace deSPICYtoINVADER.Characters
             GetHitBox();
         }
 
+        /// <summary>
+        /// Méthode héritée de character. 
+        /// Update les informations (vie et score), le dessin du joueur, lis les input du clavier et clignote si le joueur est touché
+        /// </summary>
         public override void Update()
         {
             ShowInformations();
@@ -47,7 +61,9 @@ namespace deSPICYtoINVADER.Characters
         }
 
         #region Informations
-        //affiche la vie et le score
+        /// <summary>
+        /// Affiche la vie et le score
+        /// </summary>
         private void ShowInformations()
         {
             //Vies
@@ -69,11 +85,15 @@ namespace deSPICYtoINVADER.Characters
             }
         }
 
+        /// <summary>
+        /// Ajoute les points au score du joueur
+        /// </summary>
+        /// <param name="points">Nombre de point à ajouter</param>
         public static void AddOnScore(int points)
         {
             if (Menu.Difficulty == 2)
             {
-                Score += points * 7;
+                Score += points * 4;
             }
             else
             {
@@ -81,6 +101,9 @@ namespace deSPICYtoINVADER.Characters
             }
         }
 
+        /// <summary>
+        /// A la fin du jeur, on appelle cette méthode pour reset le score et GonnaDelete
+        /// </summary>
         public void Reset()
         {
             Life = MAX_LIVES;
@@ -131,6 +154,10 @@ namespace deSPICYtoINVADER.Characters
             }
         }
 
+        /// <summary>
+        /// Lis les touches entrée par le joueur.
+        /// Effectue une action pour les touches suivantes : Gauche (va à gauche), Droite (va à droite), Espace (tir), M (active le autoMove), Bas (Arrête la fusée sur place)
+        /// </summary>
         private void Input()
         {
             if (Console.KeyAvailable)
@@ -176,6 +203,9 @@ namespace deSPICYtoINVADER.Characters
         #endregion
 
         #region Shoot/GetShot
+        /// <summary>
+        /// Méthode pour shooter, on peut shoot une fois tous les 75 tics
+        /// </summary>
         protected override void Shoot()
         {
             if (_nextShootTiming <= Game.tics)
@@ -186,6 +216,11 @@ namespace deSPICYtoINVADER.Characters
             }
         }
 
+        /// <summary>
+        /// Pour savoir si on se fait toucher par une Bullet.
+        /// On l'utilise sur toutes les bullets descendante et si elles sont à la hauteur du joueur. Inutile de tester si on se fait toucher par une bullet qui est en haut de l'écran
+        /// </summary>
+        /// <param name="bull">Bullet qui pourrait nous toucher</param>
         public override void GetShot(Bullet bull)
         {
             if (bull.Position.Y >= _position.Y && bull.Direction == 1)//Si la bullet est à la hauteur du joueur ou moins, et si elle va vers le bas
@@ -210,8 +245,11 @@ namespace deSPICYtoINVADER.Characters
                 }
             }
         }
-
-
+        
+        /// <summary>
+        /// Clignote pendant 200tics si le joueur se fait toucher
+        /// (Alterne entre un sprite vide et le sprite normal tous les 10tics pendant 200 tics)
+        /// </summary>
         private void Blink()
         {
             if (Game.tics < _invincible)

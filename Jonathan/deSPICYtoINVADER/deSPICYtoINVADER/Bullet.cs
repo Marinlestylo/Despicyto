@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe Bullet qui permet de créer une bullet
 using deSPICYtoINVADER.Utils;
 
 namespace deSPICYtoINVADER.Characters
 {
+    /// <summary>
+    /// Classe permettant de créer et gérer une bullet
+    /// </summary>
     public class Bullet
     {
         /* Constante */

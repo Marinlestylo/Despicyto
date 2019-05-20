@@ -1,40 +1,43 @@
-﻿using deSPICYtoINVADER.Characters;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe Game qui gère toute la partie jeu
+using deSPICYtoINVADER.Characters;
 using deSPICYtoINVADER.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace deSPICYtoINVADER
 {
+    /// <summary>
+    /// Classe qui gère tout le jeu et qui implémente le player le swarm etc
+    /// </summary>
     public class Game
     {
         /* Constantes */
-        public const int WIDTH_OF_WIDOWS = 150;
-        public const int HEIGHT_OF_WINDOWS = 80;
+        public const int WIDTH_OF_WIDOWS = 150;//Largeur de la fenêtre
+        public const int HEIGHT_OF_WINDOWS = 80;//Hauteur de la fenêtre
         public const int MARGIN = 4;//Marge de chaque de côté
         private const string END_MESSAGE = ", suite à votre malencontreuse défaite contre ces aliens, ils ont envahi la terre et asservi les humains." +
                                            "\nVous en êtes l'unique responsable. Cependant la terre étant peuplée d'humains débiles pour la plupart," +
-                                           " ce n'est peut-être pas une si mauvaise chose.\nVotre score est de : ";
+                                           " ce n'est peut-être pas une si mauvaise chose.\nVotre score est de : ";//Message de fin
 
         /* Static */
-        public static int tics = 0;
-        public static bool gameRunning;
+        public static int tics = 0;//tics s'incrémentre à chaque tour de boucle. C'est static car on l'utilise dans le player, l'enemy, la bullet et le swarm
+        public static bool _gameRunning;//Bool qui se set à false quand on veut arrêter le jeu
         private static string everyPixel;//String qui va tout afficher
-        public static char[][] allChars = new char[HEIGHT_OF_WINDOWS - 1][];
-        public static List<Bullet> allBullets = new List<Bullet>();
+        public static char[][] allChars = new char[HEIGHT_OF_WINDOWS - 1][];//Tableau de tableu de char qui contient tous les chars de la console et qui va tout afficher avec
+        //un seul writeLine, on le modifie depuis Player, Enemy, Bullet, swarm
+        public static List<Bullet> allBullets = new List<Bullet>();//Liste qui contient toutes les bullets. On la modifie depuis player et Enemy
 
         /* Attributs */
-        //private Enemy _enemy = new Enemy(new Point(15, 15), Sprites.SmallEnemy);
-        private Swarm _swarm;
-        private Player _user;
-        private Stopwatch _stopTime;
-        private string _username;
-        private JsonHighScore _score;
+        private Swarm _swarm;//Crée l'essaim
+        private Player _user;//crée le joueur
+        private Stopwatch _stopTime;//Crée une stopwatch pour que tout les tours de boucle prenne le même temps (5ms)
+        private string _username;//Stock le pseduo du joueur pour les highscore
+        private JsonHighScore _score;//Crée un objet jsonHighscore pour stocker les highscore
 
         /// <summary>
         /// Constructeur de la classe Game
@@ -43,7 +46,7 @@ namespace deSPICYtoINVADER
         /// </summary>
         public Game()
         {
-            gameRunning = true;
+            _gameRunning = true;
             _swarm = new Swarm(5, 7);
             _user = new Player();
             _stopTime = new Stopwatch();
@@ -60,6 +63,10 @@ namespace deSPICYtoINVADER
             Console.SetWindowSize(WIDTH_OF_WIDOWS,HEIGHT_OF_WINDOWS);
         }
 
+        /// <summary>
+        /// Permet rentrer son pseudo au début du jeu, pour les high score.
+        /// Min 4 char max 15
+        /// </summary>
         private void EnterName()
         {
             Console.Clear();
@@ -77,12 +84,15 @@ namespace deSPICYtoINVADER
             } while (temp);
         }
 
+        /// <summary>
+        /// Boucle du jeu, tant que le joueur a encore des vies et que le gameRunning est à true, la boucle continue.
+        /// </summary>
         public void GameLoop()
         {
             EnterName();
             SetWindow();
             Sound.BackMusic("Piano");
-            while (!_user.GonnaDelete && gameRunning)
+            while (!_user.GonnaDelete && _gameRunning)
             {
                 /* Début de boucle */
                 _stopTime.Restart();
@@ -109,6 +119,9 @@ namespace deSPICYtoINVADER
             GameOver();
         }
 
+        /// <summary>
+        /// Affiche Game Over en gros au milieu de l'écran. Stop la musique et on ajoute le score si il est assez bon.
+        /// </summary>
         private void ShowGameOver()
         {
             _score.AddScoreInJson(new Score(_username, Player.Score));
@@ -146,12 +159,15 @@ namespace deSPICYtoINVADER
             }
         }
 
+        /// <summary>
+        /// Méthode pour reset le jeu
+        /// </summary>
         public void ResetGame()
         {
             Player.Score = 0;
             allBullets = new List<Bullet>();
             _user.Reset();
-            gameRunning = true;
+            _gameRunning = true;
         }
 
         /// <summary>
@@ -165,6 +181,9 @@ namespace deSPICYtoINVADER
             BulletUpdate();
         }
 
+        /// <summary>
+        /// Check toutes les collisions entre Bullet-Player et Bullet-Enemy
+        /// </summary>
         private void Collision()
         {
             foreach (Bullet b in allBullets)
@@ -184,6 +203,9 @@ namespace deSPICYtoINVADER
         }
 
         #region BulletUpdate
+        /// <summary>
+        /// Update la liste des bullet et supprime les bullet qui touchent soit le player soit un enemy
+        /// </summary>
         private void BulletUpdate()
         {
             RemoveBullet();//On remove les bullets avant de les update pour pas update des bullets "mortes"
@@ -193,6 +215,9 @@ namespace deSPICYtoINVADER
             }
         }
 
+        /// <summary>
+        /// Supprime les bullet qui ont GonnaDelete à true
+        /// </summary>
         private void RemoveBullet()
         {
             for (int i = 0; i < allBullets.Count; i++)

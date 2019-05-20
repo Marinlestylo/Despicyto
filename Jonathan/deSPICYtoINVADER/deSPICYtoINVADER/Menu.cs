@@ -48,7 +48,7 @@ namespace deSPICYtoINVADER
         {
             _options = new string[5] { "Jouer", "Options", "HautScore", "A propos", "Quitter" };//tableau avec le nom des options du menu
             _optionsName = new string[2] { "Difficulté", "Son" };//Tableau avec le nom des paramètres dans le options
-            _optionValues = new string[4] { "Iron IV (Facile)    ", "Silver II (Difficile)", "ON ", "OFF" }; //Tableau avec les valeurs des options
+            _optionValues = new string[4] { "Iron IV (Facile)     ", "Silver II (Difficile)", "ON ", "OFF" }; //Tableau avec les valeurs des options
             _highScore = new JsonHighScore("Resources\\HighScore.json");
             _index = 0;
             CloseGame = false;

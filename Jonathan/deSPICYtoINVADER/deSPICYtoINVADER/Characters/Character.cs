@@ -1,8 +1,14 @@
-﻿using System.Diagnostics;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe asbtract pour créer la classe player et la classe enemy
 using deSPICYtoINVADER.Utils;
 
 namespace deSPICYtoINVADER.Characters
 {
+    /// <summary>
+    /// Classe character dont vont hériter les classes Player et Enemy
+    /// </summary>
     public abstract class Character
     {
         /// <summary>
@@ -10,7 +16,7 @@ namespace deSPICYtoINVADER.Characters
         /// </summary>
         public int Life { get; protected set; }
         /// <summary>
-        /// Propriétés pour savoir si on doit supprimer le character
+        /// Propriétés pour savoir si on doit supprimer le character, si les vies arrivent à 0, on set à true;
         /// </summary>
         public bool GonnaDelete { get; protected set; }
 
@@ -29,14 +35,6 @@ namespace deSPICYtoINVADER.Characters
             Life = lives;
             _position = position;
             GonnaDelete = false;
-        }
-
-        /// <summary>
-        /// Set GonnaDelete a true
-        /// </summary>
-        public void Death()
-        {
-            GonnaDelete = true;
         }
 
         /// <summary>
@@ -61,9 +59,26 @@ namespace deSPICYtoINVADER.Characters
             Draw();
         }
 
+        /// <summary>
+        /// Tous les tics, cette methode va update le player ou l'enemy (la position, la hitbox, les tirs, etc)
+        /// </summary>
         public abstract void Update();
+
+        /// <summary>
+        /// Pour voir si on se fait shooter par la bullet passée en paramètre
+        /// </summary>
+        /// <param name="bull"></param>
         public abstract void GetShot(Bullet bull);
+
+        /// <summary>
+        /// Permet de bouger et d'afficher le sprites du characters qui bouge
+        /// </summary>
+        /// <param name="direction"></param>
         protected abstract void Move(int direction);
+
+        /// <summary>
+        /// Permet de tirer une bullet
+        /// </summary>
         protected abstract void Shoot();
     }
 }

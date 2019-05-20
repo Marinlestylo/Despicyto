@@ -1,10 +1,8 @@
-﻿/* ETML
- * Auteur : Jonathan
- * Date : 10.05.2019
- * Description : Cette classe utilise le package Nuget Newtonsoft afin de pouvoir lire et stocker des choses dans un fichier json.
- */
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Cette classe utilise le package Nuget Newtonsoft afin de pouvoir lire et stocker des choses dans un fichier json.
 using deSPICYtoINVADER.Utils;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,6 +31,10 @@ namespace deSPICYtoINVADER
             _path = path;
         }
 
+        /// <summary>
+        /// Permet d'ajoute un score dans le fichier Json, si il rentre dans le top 10
+        /// </summary>
+        /// <param name="newOne"></param>
         public void AddScoreInJson(Score newOne)
         {
             Deserialize();

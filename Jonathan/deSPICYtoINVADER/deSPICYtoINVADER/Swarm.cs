@@ -1,14 +1,16 @@
-﻿using deSPICYtoINVADER.Characters;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe Swarm qui crée un essaim d'enemy
+using deSPICYtoINVADER.Characters;
 using deSPICYtoINVADER.Utils;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace deSPICYtoINVADER
 {
+    /// <summary>
+    /// Classe qui crée et gère l'essaim d'enemy
+    /// </summary>
     public class Swarm
     {
         /* Propriétés */
@@ -21,7 +23,7 @@ namespace deSPICYtoINVADER
         private int _direction;//Direction de l'essaim
         private int _lastDirection;//Comme l'essaim n'a pas de position, on détecte que l'on doit descendre les Enemy 
         //quand _direction et _LastDirection ne sont plus pareil
-        private int swarmCounter;
+        private int swarmCounter;//Compte le nombre de vague
 
         /// <summary>
         /// Constructeur de la classe Swarm
@@ -36,7 +38,8 @@ namespace deSPICYtoINVADER
         }
 
         /// <summary>
-        /// Update l'essaim
+        /// Update l'essaim, si l'essaime est vide, recrée une vague et incrément le compteur, bouge tous les enemy tous les 7 tics, supprime les enemy mort et stop le jeu
+        /// si les enemy arrive à la hauteur du joueur
         /// </summary>
         public void Update()
         {
@@ -55,6 +58,9 @@ namespace deSPICYtoINVADER
             Invasion();
         }
 
+        /// <summary>
+        /// Méthode qu'on utilise si on veut rejouer.(On recrée une liste d'enemy vide)
+        /// </summary>
         public void reset()
         {
             Enemies = new List<Enemy>();
@@ -103,6 +109,9 @@ namespace deSPICYtoINVADER
             _lastDirection = _direction;
         }
 
+        /// <summary>
+        /// Update tous les Enemy de la liste via la méthode update de la classe Enemy
+        /// </summary>
         private void EnemyUpdate()
         {
             foreach (Enemy e in Enemies)
@@ -111,6 +120,9 @@ namespace deSPICYtoINVADER
             }
         }
 
+        /// <summary>
+        /// Permet de descendre tous l'essaim quand il arrive vers un bord
+        /// </summary>
         private void GoDown()
         {
             foreach (Enemy en in Enemies)
@@ -174,7 +186,7 @@ namespace deSPICYtoINVADER
                 if (e.BottomRightCorner.Y >= Game.HEIGHT_OF_WINDOWS - Sprites.playerDesign.Length - 1)
                 {
                     GoDown();
-                    Game.gameRunning = false;
+                    Game._gameRunning = false;
                     return;
                 }
             }

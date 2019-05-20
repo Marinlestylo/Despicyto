@@ -1,9 +1,19 @@
-﻿using System;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe Sprite qui stock les différents sprites et messages ASCII
+using System;
 
 namespace deSPICYtoINVADER.Utils
 {
+    /// <summary>
+    /// Classe qui stock les sprites et messages ASCII et permet d'afficher les messages ASCII
+    /// </summary>
     public static class Sprites
     {
+        /// <summary>
+        /// Design du player
+        /// </summary>
         public static readonly string[] playerDesign = new string[]
         {
             "▄",
@@ -29,6 +39,9 @@ namespace deSPICYtoINVADER.Utils
             "| / |@| \ |",
             "|/  |@|  \|"*/
 
+        /// <summary>
+        /// Design de l'Enemy
+        /// </summary>
         public static readonly string[] enemyDesign = new string[]
         {
             "▄     ▄",
@@ -64,6 +77,9 @@ namespace deSPICYtoINVADER.Utils
             }
         }
 
+        /// <summary>
+        /// Titre du jeu
+        /// </summary>
         public static readonly string[] mainTitle = new string[]
         {
             "   _____       _            _ _   _                _           ",
@@ -76,6 +92,9 @@ namespace deSPICYtoINVADER.Utils
             "        |_|           |___/                                    "
         };
 
+        /// <summary>
+        /// Titre des Options
+        /// </summary>
         public static readonly string[] optionsTitle = new string[]
         {
             "   ___        _   _ ",
@@ -86,6 +105,9 @@ namespace deSPICYtoINVADER.Utils
             "       |_|"
         };
 
+        /// <summary>
+        /// Titre des HighScore
+        /// </summary>
         public static readonly string[] highScoreTitle = new string[]
         {
             "  __  __      _ _ _  ",
@@ -95,6 +117,9 @@ namespace deSPICYtoINVADER.Utils
             " |_|  |_|\\___|_|_|_|\\___|\\__,_|_|  |___/ |___/\\___\\___/|_|  \\___||___/"
         };
 
+        /// <summary>
+        /// Titre à propos
+        /// </summary>
         public static readonly string[] aboutTitle = new string[]
         {
             "     ___    _ __  _ __ ___  _ __   ___  ___",
@@ -104,6 +129,9 @@ namespace deSPICYtoINVADER.Utils
             " /_/  |_|  |_|             |_|"
         };
 
+        /// <summary>
+        /// Message Game Over
+        /// </summary>
         public static readonly string[] gameOver = new string[]
         {
             "  ______       ___       ___  ___   _______      ______   ____    ____  _______  ______  ",
@@ -114,6 +142,9 @@ namespace deSPICYtoINVADER.Utils
             " \\______| /__/     \\__\\ |__|  |__| |_______|    \\______/      \\__/     |_______|| _| `.__|"
         };
 
+        /// <summary>
+        /// Jonathan en ASCII
+        /// </summary>
         public static readonly string[] joAscii = new string[]
         {
             "    ___                   _   _ ",
@@ -124,6 +155,9 @@ namespace deSPICYtoINVADER.Utils
             " \\____/ \\___/|_| |_|\\__,_|\\__|_| |_|\\__,_|_| |_|"
         };
 
+        /// <summary>
+        /// Filipe en ASCII
+        /// </summary>
         public static readonly string[] filipeAscii = new string[]
         {
             "______ _ _ _ ",
@@ -136,6 +170,9 @@ namespace deSPICYtoINVADER.Utils
             "            |_|"
         };
 
+        /// <summary>
+        /// "et" en ASCII
+        /// </summary>
         public static readonly string[] andAscii = new string[]
         {
             "      _",
