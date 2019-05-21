@@ -1,14 +1,18 @@
-﻿using deSPICYtoINVADER.Utils;
+﻿///ETML
+///Auteur : Jonathan Friedli et Filipe Andrade Barros
+///Date : 20.05.19
+///Description : Classe Menu qui gère le menu
+using deSPICYtoINVADER.Utils;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace deSPICYtoINVADER
 {
+    /// <summary>
+    /// Classe qui gère le menu, sa navigation et qui lance le jeu en temps voulu. A la fin du jeu, on revient dans la navigation
+    /// du menu.
+    /// </summary>
     public class Menu
     {
         /* Constantes */
@@ -28,17 +32,20 @@ namespace deSPICYtoINVADER
         /// Booléen qui gère le son
         /// </summary>
         public static bool Sound { get; private set; }
-
-        public bool CloseGame { get; private set; }//Si = true, le jeu se ferme
+        /// <summary>
+        /// Bool qui gère si on doit fermer le jeu ou non
+        /// </summary>
+        //public bool CloseGame { get; private set; }//Si = true, le jeu se ferme
 
         /* Attributs */
         private string[] _options;//tableau avec le nom des options du menu
         private string[] _optionsName;//Tableau avec le nom des paramètres dans le options
         private string[] _optionValues; //Tableau avec les valeurs des options
         private int _index;//Index du menu
-        private bool _loadGame;
-        private Game _game;
-        private JsonHighScore _highScore;
+        private bool _loadGame;//permet de savoir quand lancer le jeu
+        private Game _game;//Permet de lancer le jeu
+        private JsonHighScore _highScore;//affichage des highscore
+        private bool _closeProgram;//fermeture du program
 
         /// <summary>
         /// Constructeur du menu
@@ -46,12 +53,12 @@ namespace deSPICYtoINVADER
         /// </summary>
         public Menu()
         {
-            _options = new string[5] { "Jouer", "Options", "HautScore", "A propos", "Quitter" };//tableau avec le nom des options du menu
+            _options = new string[5] { "Jouer", "Options", "Scores hauts", "A propos", "Quitter" };//tableau avec le nom des options du menu
             _optionsName = new string[2] { "Difficulté", "Son" };//Tableau avec le nom des paramètres dans le options
             _optionValues = new string[4] { "Iron IV (Facile)     ", "Silver II (Difficile)", "ON ", "OFF" }; //Tableau avec les valeurs des options
-            _highScore = new JsonHighScore("Resources\\HighScore.json");
+            _highScore = new JsonHighScore("Resources\\HighScore.json");//Pour les highscore
             _index = 0;
-            CloseGame = false;
+            _closeProgram = false;
             Difficulty = 2;
             Sound = true;
         }
@@ -74,12 +81,8 @@ namespace deSPICYtoINVADER
         /// </summary>
         private void ShowMenu()
         {
-            //Boucle pour le titre
-            for (int i = 0; i < Sprites.mainTitle.Length; i++)
-            {
-                Console.SetCursorPosition(titlePadding.X , titlePadding.Y + i);
-                Console.WriteLine(Sprites.mainTitle[i]);
-            }
+            //Méthode qui affiche le titre
+            Sprites.DrawTitle(Sprites.mainTitle, new Point(titlePadding.X, titlePadding.Y));
 
             //boucle pour les options du menu
             for (int i = 0; i < _options.Length; i++)
@@ -88,7 +91,6 @@ namespace deSPICYtoINVADER
                 Console.WriteLine(_options[i]);
             }
             //Curseur du menu
-            Console.WriteLine("");
             DrawCursor();
         }
 
@@ -157,7 +159,7 @@ namespace deSPICYtoINVADER
                     About();
                     break;
                 case 4://Ferme le jeu
-                    CloseGame = true;
+                    _closeProgram = true;
                     break;
                 case 5://Dans les options, change la difficulté
                     ChangeDifficulty();
@@ -169,6 +171,7 @@ namespace deSPICYtoINVADER
         }
 
         /// <summary>
+        /// Dans les différentes options
         /// Détecte si on presse la touche escape afin de revenir au menu
         /// </summary>
         /// <returns>true si escape est pressed, false sinon</returns>
@@ -184,7 +187,7 @@ namespace deSPICYtoINVADER
         }
 
         /// <summary>
-        /// Permet de changer la fréquence de tir des enemies
+        /// Permet de changer la fréquence de tir des enemies et la difficulté
         /// </summary>
         private void ChangeDifficulty()
         {
@@ -243,11 +246,13 @@ namespace deSPICYtoINVADER
             Sprites.DrawTitle(Sprites.joAscii, new Point(2, 8));
             Sprites.DrawTitle(Sprites.andAscii, new Point(37, 16));
             Sprites.DrawTitle(Sprites.filipeAscii, new Point(50, 16));
+            Console.SetCursorPosition(20, 23);
+            Console.WriteLine("Appuyez sur escape pour retourner au menu");
             ReturnToMenu();
         }
 
         /// <summary>
-        /// Méthode pas finie qui montre le meilleur score de chaque joueur (jusqu'a 10 joueurs)
+        /// Méthode qui montre les meilleurs scores (jusqu'a 10 scores)
         /// </summary>
         private void HighScore()
         {
@@ -261,7 +266,7 @@ namespace deSPICYtoINVADER
                 Console.SetCursorPosition(41, 10 + i);
                 Console.WriteLine(temp[i].Value);
             }
-            Console.SetCursorPosition(15, 22);
+            Console.SetCursorPosition(20, 22);
             Console.WriteLine("Appuyez sur escape pour retourner au menu");
             ReturnToMenu();
         }
@@ -299,7 +304,8 @@ namespace deSPICYtoINVADER
             {
                 Console.WriteLine(_optionValues[3]);
             }
-            Console.WriteLine();
+            Console.SetCursorPosition(20, 22);
+            Console.WriteLine("Appuyez sur escape pour retourner au menu");
 
             NavigateInOption();//Naviguer dans le menu
 
@@ -347,7 +353,7 @@ namespace deSPICYtoINVADER
                     }
                 }
             }
-            _index = 1;//Permet de sélectionner les options dans le menu de base
+            _index = 1;//Permet de sélectionner "Options" dans le menu de base
         }
 
         /// <summary>
@@ -355,7 +361,7 @@ namespace deSPICYtoINVADER
         /// </summary>
         private void Navigate()
         {
-            while (!CloseGame && !_loadGame)
+            while (!_closeProgram && !_loadGame)
             {
                 if (Console.KeyAvailable)
                 {

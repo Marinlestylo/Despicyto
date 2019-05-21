@@ -21,11 +21,10 @@ namespace deSPICYtoINVADER
         public const int HEIGHT_OF_WINDOWS = 80;//Hauteur de la fenêtre
         public const int MARGIN = 4;//Marge de chaque de côté
         private const string END_MESSAGE = ", suite à votre malencontreuse défaite contre ces aliens, ils ont envahi la terre et asservi les humains." +
-                                           "\nVous en êtes l'unique responsable. Cependant la terre étant peuplée d'humains débiles pour la plupart," +
-                                           " ce n'est peut-être pas une si mauvaise chose.\nVotre score est de : ";//Message de fin
+                                           "\nVous en êtes l'unique responsable.\nVotre score est de : ";//Message de fin (On affiche le nom du joueur au début)
 
         /* Static */
-        public static int tics = 0;//tics s'incrémentre à chaque tour de boucle. C'est static car on l'utilise dans le player, l'enemy, la bullet et le swarm
+        public static int tics = 0;// les tics s'incrémentent à chaque tour de boucle. C'est static car on l'utilise dans le player, l'enemy, la bullet et le swarm
         public static bool _gameRunning;//Bool qui se set à false quand on veut arrêter le jeu
         private static string everyPixel;//String qui va tout afficher
         public static char[][] allChars = new char[HEIGHT_OF_WINDOWS - 1][];//Tableau de tableu de char qui contient tous les chars de la console et qui va tout afficher avec
@@ -204,7 +203,7 @@ namespace deSPICYtoINVADER
 
         #region BulletUpdate
         /// <summary>
-        /// Update la liste des bullet et supprime les bullet qui touchent soit le player soit un enemy
+        /// Update les bullet de la liste (les faires bouger) et supprime celles qui touchent soit le player soit un enemy
         /// </summary>
         private void BulletUpdate()
         {
@@ -247,6 +246,8 @@ namespace deSPICYtoINVADER
         /// Va a la position 0;0
         /// Transforme le tableau en une seule string
         /// Ecris la string
+        /// Si le joueur a un tiers ou moins de ses vies, l'affichage devient multicolor et clignote.
+        /// Pas recommandé pour les épileptiques
         /// </summary>
         private void FromArrayToString()
         {
