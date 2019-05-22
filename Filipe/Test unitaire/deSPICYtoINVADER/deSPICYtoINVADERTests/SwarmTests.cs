@@ -36,7 +36,7 @@ namespace deSPICYtoINVADER.Tests
             int col = 5;
 
             //Act
-            sw = new Swarm(row, col);
+            sw = new Swarm(row, col); // La méthode create est déjà appelé dans le constructeur
 
             // Assert
             Assert.AreEqual(25, sw.Enemies.Count);
