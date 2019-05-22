@@ -9,6 +9,9 @@ using deSPICYtoINVADER.utils;
 
 namespace deSPICYtoINVADER.Characters.Tests
 {
+    /// <summary>
+    /// Tests unitaires classe Enemy
+    /// </summary>
     [TestClass()]
     public class EnemyTests
     {

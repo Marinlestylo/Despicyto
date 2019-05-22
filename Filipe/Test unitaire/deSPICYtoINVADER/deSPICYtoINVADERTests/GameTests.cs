@@ -11,6 +11,9 @@ namespace deSPICYtoINVADER.Tests
     [TestClass()]
     public class GameTests
     {
+        /// <summary>
+        /// Tests unitaires classe Game
+        /// </summary>
         [TestMethod()]
         public void GameTest()
         {

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace deSPICYtoINVADER.Tests
 {
+    /// <summary>
+    /// Tests unitaires classe Point
+    /// </summary>
     [TestClass()]
     public class PointTests
     {

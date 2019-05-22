@@ -11,6 +11,9 @@ namespace deSPICYtoINVADER.Characters.Tests
     [TestClass()]
     public class BulletTests
     {
+        /// <summary>
+        /// Tests unitaires classe Bullet
+        /// </summary>
         [TestMethod()]
         public void BulletTest()
         {

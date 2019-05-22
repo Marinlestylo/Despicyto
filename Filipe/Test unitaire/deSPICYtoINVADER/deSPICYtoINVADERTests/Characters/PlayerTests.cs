@@ -9,6 +9,9 @@ using System.Diagnostics;
 
 namespace deSPICYtoINVADER.Characters.Tests
 {
+    /// <summary>
+    /// Tests unitaires classe Player
+    /// </summary>
     [TestClass()]
     public class PlayerTests
     {
@@ -28,34 +31,11 @@ namespace deSPICYtoINVADER.Characters.Tests
         [TestMethod()]
         public void AddOnScoreTest()
         {
-            // Arrange
-            Player p;
-
             //Act
-            p = new Player();
             Player.AddOnScore(37);
 
             // Assert
             Assert.AreEqual(37, Player.Score);
-        }
-
-        [TestMethod()]
-        public void GetShotTest()
-        {
-            // Arrange
-            Player play;
-            Bullet b;
-            int x = 75;
-            int y = 69;
-            int direction = 1;
-
-            //Act
-            play = new Player();
-            b = new Bullet(new Point(x,y), direction);
-            play.GetShot(b);
-
-            // Assert
-            Assert.AreEqual(8, play.Life);
         }
     }
 }

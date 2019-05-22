@@ -9,6 +9,9 @@ using deSPICYtoINVADER.Characters;
 
 namespace deSPICYtoINVADER.Tests
 {
+    /// <summary>
+    /// Tests unitaires classe Swarm
+    /// </summary>
     [TestClass()]
     public class SwarmTests
     {
