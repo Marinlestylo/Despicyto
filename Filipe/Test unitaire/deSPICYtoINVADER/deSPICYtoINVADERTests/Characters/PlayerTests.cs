@@ -33,9 +33,10 @@ namespace deSPICYtoINVADER.Characters.Tests
 
             //Act
             p = new Player();
+            Player.AddOnScore(37);
 
             // Assert
-            Assert.IsNotNull(p);
+            Assert.AreEqual(37, Player.Score);
         }
 
         [TestMethod()]
